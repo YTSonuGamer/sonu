@@ -3,7 +3,6 @@ layout: page
 navname: Screenshots
 ---
 
-# Screenshots
 <script src="https://unpkg.com/micromodal/dist/micromodal.min.js"></script>
 <script>
   document.addEventListener("DOMContentLoaded", function() {
@@ -18,7 +17,11 @@ navname: Screenshots
 
     for (var i = 0; i < modalImages.length; i++) {
       modalImages[i].querySelector("img").src = images[i];
-      modalImages[i].dataset.micromodalTrigger = images[i];
+      modalImages[i].dataset.micromodalTrigger = "#" + images[i];
     }
+
+    MicroModal.init({
+      awaitCloseAnimation: true
+    });
   });
 </script>
